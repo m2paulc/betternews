@@ -1,0 +1,16 @@
+dist
+build
+node_modules
+routeTree.gen.ts
+*.log
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+.vscode
+.idea
+.env
+.env.*
+.prettiercache
+.npmrc
+.yarnrc
