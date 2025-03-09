@@ -1,7 +1,13 @@
+import { DrizzlePostgreSQLAdapter } from "@lucia-auth/adapter-drizzle";
+
 import "dotenv/config";
+
 import { drizzle } from "drizzle-orm/postgres-js";
+
 import postgres from "postgres";
 import { z } from "zod";
+
+import { sessionTable, userTable } from "./db/schemas/auth";
 
 const EnvSchema = z.object({
   DATABASE_URL: z.string().url(),
@@ -13,7 +19,9 @@ if (!processEnv) {
   throw new Error("Invalid environment variables");
 }
 const queryClient = postgres(processEnv.DATABASE_URL);
-const db = drizzle(queryClient);
+const db = drizzle(queryClient, {
+  schema: { user: userTable, session: sessionTable },
+});
 
 /* Testing the connection to the database  */
 /* comment out after successful connection testing  */
@@ -21,3 +29,9 @@ const db = drizzle(queryClient);
 // console.log(result);
 
 export default db;
+
+export const adapter = new DrizzlePostgreSQLAdapter(
+  db,
+  sessionTable,
+  userTable
+);

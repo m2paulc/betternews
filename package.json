@@ -6,12 +6,16 @@
     "format:check": "bunx prettier . --check",
     "lint:server": " cd server && eslint .",
     "lint:frontend": " cd frontend && eslint .",
-    "start": "bun server/index.ts"
+    "start": "bun server/index.ts",
+    "db:reset": "bun ./server/db/reset.ts"
   },
   "dependencies": {
+    "@hono/zod-validator": "^0.4.3",
+    "@lucia-auth/adapter-drizzle": "^1.1.0",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.40.0",
     "hono": "^4.7.4",
+    "lucia": "^3.2.2",
     "postgres": "^3.4.5",
     "zod": "^3.24.2"
   },

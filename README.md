@@ -22,7 +22,9 @@ Learn tanstack using Hono, Bun, Drizzle ORM, Lucia and TailwindCSS.
 
 ## Setup Authentication
 
-- [ ] setup Lucia for authentication
+- [x] setup Lucia for authentication
+- [x] setup session management with Lucia
+- [x] create login and register routes
 
 To run: bun dev
 
