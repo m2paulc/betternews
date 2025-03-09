@@ -15,6 +15,15 @@ Learn tanstack using Hono, Bun, Drizzle ORM, Lucia and TailwindCSS.
 - [x] setup drizzle ORM with Bun
 - [x] setup an adapter for connecting to postgresql database
 
+## Setup App
+
+- [x] create a shared folder for components, utils, and types
+- [x] setup error handling in Hono app
+
+## Setup Authentication
+
+- [ ] setup Lucia for authentication
+
 To run: bun dev
 
 open http://localhost:3000
